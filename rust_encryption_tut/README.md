@@ -1,4 +1,5 @@
 🚀 Rust Tutorial: OOP Without Inheritance — Traits & Composition Explained
+
 💡 Introduction
 
 If you come from Java, C++, or Python, you’re probably used to class inheritance — one class extending another to reuse code or behavior.

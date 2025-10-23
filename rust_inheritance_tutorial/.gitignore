@@ -1,0 +1,83 @@
+# === Rust Specific ===
+# Build outputs
+/target/
+**/target/
+debug/
+release/
+
+# Cargo lock files
+Cargo.lock
+*.lock
+
+# Rustfmt backups
+**/*.rs.bk
+
+# Debug symbols
+*.pdb
+
+# === Environment & Configuration ===
+# Environment files (keep .env.example as template)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+!.env.example
+
+# Configuration files with sensitive data
+config/*.local.*
+config/local.*
+
+# === IDE ===
+# JetBrains IDEs (RustRover, IntelliJ, etc.)
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# VS Code
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+# Other editors
+*.swp
+*.swo
+*~
+
+# === OS Generated ===
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+.directory
+
+# === Project Specific ===
+# Generated documentation
+/doc/
+
+# Coverage reports
+/coverage/
+*.profraw
+
+# Build artifacts
+/dist/
+/build/
+/out/
+
+# Log files
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
