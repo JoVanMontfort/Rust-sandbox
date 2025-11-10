@@ -1,0 +1,13 @@
+[package]
+name = "dependency-injection"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+pavex = { workspace = true }
+tokio = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+uuid = { workspace = true }
+secrecy = { workspace = true }
+shared-dependencies = { path = "../shared-dependencies" }
