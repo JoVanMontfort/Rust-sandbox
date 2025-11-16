@@ -1,0 +1,10 @@
+[workspace]
+resolver = "2"
+members = [
+    "01-manual-di",
+    "02-trait-based-di",
+    "03-dyn-trait-di",
+    "04-arc-mutex-di",
+    "05-dependency-container",
+    "shared-dependencies"
+]
