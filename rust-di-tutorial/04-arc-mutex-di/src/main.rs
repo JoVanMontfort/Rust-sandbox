@@ -1,8 +1,8 @@
 use async_trait::async_trait;
-use shared_dependencies::{RepositoryError, User};
-use std::collections::HashMap;
+use shared_dependencies::{User, RepositoryError};
 use std::sync::Arc;
 use tokio::sync::Mutex;
+use std::collections::HashMap;
 
 // Define traits
 #[async_trait]

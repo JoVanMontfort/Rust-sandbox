@@ -1,6 +1,5 @@
-use shared_dependencies::User;
-
 // Simple manual dependency injection - passing dependencies explicitly
+
 pub struct DatabaseConnection {
     pub connection_string: String,
 }
@@ -25,18 +24,18 @@ impl UserRepository {
         Self { db }
     }
 
-    pub fn find_by_id(&self, id: &str) -> Option<User> {
+    pub fn find_by_id(&self, id: &str) -> Option<shared_dependencies::User> {
         self.db.connect();
         println!("Finding user with ID: {}", id);
 
-        Some(User {
+        Some(shared_dependencies::User {
             id: id.to_string(),
             email: "user@example.com".to_string(),
             name: "John Doe".to_string(),
         })
     }
 
-    pub fn save(&self, user: &User) {
+    pub fn save(&self, user: &shared_dependencies::User) {
         self.db.connect();
         println!("Saving user: {} - {}", user.id, user.email);
     }
@@ -51,12 +50,12 @@ impl UserService {
         Self { user_repo }
     }
 
-    pub fn get_user(&self, id: &str) -> Option<User> {
+    pub fn get_user(&self, id: &str) -> Option<shared_dependencies::User> {
         self.user_repo.find_by_id(id)
     }
 
-    pub fn create_user(&self, email: &str, name: &str) -> User {
-        let user = User {
+    pub fn create_user(&self, email: &str, name: &str) -> shared_dependencies::User {
+        let user = shared_dependencies::User {
             id: uuid::Uuid::new_v4().to_string(),
             email: email.to_string(),
             name: name.to_string(),
@@ -67,6 +66,7 @@ impl UserService {
     }
 }
 
+// Manual dependency injection - we explicitly create and pass dependencies
 fn main() {
     println!("=== Manual Dependency Injection ===");
 
